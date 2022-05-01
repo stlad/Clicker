@@ -17,14 +17,14 @@ class UserForm(forms.ModelForm):
         min_length=3,
         max_length=20,
         label='Пароль',
-        widget=forms.forms.PasswordInput(attrs = {'placeholder':'Вводи парольчик'})
+        widget=forms.PasswordInput(attrs = {'placeholder':'Вводи парольчик'})
     )
 
     password_confirm = forms.CharField(
         min_length=3,
         max_length=20,
         label='Подтверждение пароля',
-        widget=forms.forms.PasswordInput(attrs = {'placeholder':'Вводи парольчик ещё'})
+        widget=forms.PasswordInput(attrs = {'placeholder':'Вводи парольчик ещё'})
     )
 
     def clean(self):
