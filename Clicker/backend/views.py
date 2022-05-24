@@ -5,8 +5,11 @@ from .forms import UserForm
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import viewsets
 
-from .models import Core # Не забудем импортировать модель Core
+from .models import Core, Boost # Не забудем импортировать модель Core
+from .serializers import CoreSerializer,BoostSerializer
+
 
 class Register(APIView):
     def get(self, request):
@@ -37,17 +40,32 @@ class Login(APIView):
         return render(request, 'login.html', {'form': self.form, 'invalid': True})
    
 @login_required
-def index(request):         
-    core = Core.objects.get(user=request.user) # Получаем объект игры текущего пользователя
-    return render(request, 'index.html', {'core': core})
-
+def index(request):
+    core = Core.objects.get(user=request.user)
+    boosts = Boost.objects.filter(core=core) # Достаем бусты пользователя из базы
+   
+    return render(request, 'index.html', {
+        'core': core,
+        'boosts': boosts, # Возвращаем бусты на фронтик
+    })
 
 @api_view(['GET'])
 @login_required
 def call_click(request):
-    # После авторизации пользователя в каждом запросе будет присылаться объект user
     core = Core.objects.get(user=request.user)
-    core.click() 
-    core.save() 
+    is_levelup = core.click() # Труе если буст создался
+    if is_levelup:
+        Boost.objects.create(core=core, price=core.level*50, power=core.level*20) # Создание буста 
+    core.save()
 
-    return Response({ 'core': CoreSerializer(core).data }) 
+    return Response({ 'core': CoreSerializer(core).data, 'is_levelup': is_levelup })
+
+class BoostViewSet(viewsets.ModelViewSet): 
+    queryset = Boost.objects.all() 
+    serializer_class = BoostSerializer
+
+    # Переопределение метода get_queryset для получения бустов, привязанных к определенному ядру
+    def get_queryset(self):
+        core = Core.objects.get(user=self.request.user) # Получение ядра пользователя
+        boosts = Boost.objects.filter(core=core) # Получение бустов ядра
+        return boosts
