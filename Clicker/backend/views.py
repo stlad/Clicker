@@ -106,3 +106,4 @@ def update_coins(request):
 def get_core(request):
     core = Core.objects.get(user=request.user)
     return Response({'core': CoreSerializer(core).data})
+    

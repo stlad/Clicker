@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Boost
+from .models import Boost, Core
 
 admin.site.register(Boost)
+admin.site.register(Core)
 # Register your models here.
