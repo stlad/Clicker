@@ -48,8 +48,8 @@ let Game = new GameSession() // Экземпляр класса GameSession.
 
 /** Функция обработки клика пользователя на какаши. */
 function call_click() {
-    const kakashiNode = document.getElementById('kakashi')
-    click_animation(kakashiNode, 50)
+    //const kakashiNode = document.getElementById('kakashi')
+    //click_animation(kakashiNode, 50)
     Game.add_coins(Game.click_power)
 }
 
@@ -57,10 +57,10 @@ function call_click() {
 function render() {
     const coinsNode = document.getElementById('coins')
     const clickNode = document.getElementById('click_power')
-    const autoClickNode = document.getElementById('auto_click_power')
+    //const autoClickNode = document.getElementById('auto_click_power')
     coinsNode.innerHTML = Game.coins
     clickNode.innerHTML = Game.click_power
-    autoClickNode.innerHTML = Game.auto_click_power
+    //autoClickNode.innerHTML = Game.auto_click_power
 }
 
 /** Функция для обновления буста на фронтике. */
