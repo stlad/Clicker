@@ -57,10 +57,12 @@ function call_click() {
 function render() {
     const coinsNode = document.getElementById('coins')
     const clickNode = document.getElementById('click_power')
-    //const autoClickNode = document.getElementById('auto_click_power')
+    const autoClickNode = document.getElementById('auto_click_power')
+    const next_level_price = document.getElementById('next_level_price')
     coinsNode.innerHTML = Game.coins
     clickNode.innerHTML = Game.click_power
-    //autoClickNode.innerHTML = Game.auto_click_power
+    autoClickNode.innerHTML = Game.auto_click_power
+    next_level_price.innerHTML = Game.next_level_price
 }
 
 /** Функция для обновления буста на фронтике. */

@@ -26,7 +26,7 @@ body{
 .cat_container
 {
     width: 600px;
-    margin-left: 250px;
+    margin-left: 200px;
     margin-right: 0;
     float:left;
 }
@@ -35,7 +35,7 @@ body{
 {
     display: inline;
     float: left;
-    width: 400px;
+    width: 450px;
 }
 
 .info_el
@@ -70,3 +70,21 @@ body{
     background-color:rgb(104, 24, 40);
 }
 .boost_1:hover{background-color: #E84098;}
+
+
+.cat_text
+{
+    background-color: rgb(155, 155, 155);
+    top:100px;
+    left: 600px;
+    width: 220px;
+    height: 100px;
+    color:black;
+    position:absolute;
+    border-radius: 100%;
+    text-align: center;
+    padding-top:40px;
+    color: rgb(104, 24, 40);
+    font-size: large;
+    line-height: 30px;
+}
