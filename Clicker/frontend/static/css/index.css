@@ -1,0 +1,72 @@
+body{
+    background-image: url(../img/kaneki_room.jpg);
+    color:white;
+    font-size: 17px;
+    font-family: "Tahoma", sans-serif;
+}
+
+.app
+{
+    margin-top: 50px;
+}
+.cat_button
+{
+    background: transparent url(../img/catgirl.png) 50% 50% no-repeat;
+    height: 706;
+    width: 564;
+    border-radius: 20px;
+    transform: scale(1, 1);
+    border-width: 0px;
+}
+
+.cat_button:active
+{
+    transform: scale(-1, 1)
+}
+.cat_container
+{
+    width: 600px;
+    margin-left: 250px;
+    margin-right: 0;
+    float:left;
+}
+
+.info
+{
+    display: inline;
+    float: left;
+    width: 400px;
+}
+
+.info_el
+{
+    margin-bottom: 20px;
+}
+.beauty_text
+{
+    display: inline-block;
+    font-family: "Snell Roundhand",cursive;
+    color: #E84098;
+}
+
+.cat_coins 
+{
+    display: inline;
+    font-family: "Snell Roundhand",cursive;
+    color: #E84098;
+}
+
+.heder p{display: inline-block;}
+
+.boost_0
+{
+    border-radius: 20px;
+    background-color: rgb(80, 72, 72);
+}
+.boost_0:hover{background-color: #E84098;}
+.boost_1
+{
+    border-radius: 20px;
+    background-color:rgb(104, 24, 40);
+}
+.boost_1:hover{background-color: #E84098;}
