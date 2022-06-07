@@ -72,12 +72,12 @@ class BoostViewSet(viewsets.ModelViewSet):
         return boosts
 
     def partial_update(self, request, pk):
-        coins = request.data['coins'] # Получаем количество монет из тела запроса.
         boost = self.queryset.get(pk=pk)
 
-        is_levelup = boost.levelup(coins) # Передадим количество монет в метод. Этот метод мы скоро немного подкорректируем.
+        is_levelup = boost.levelup()
         if not is_levelup:
             return Response({ "error": "Не хватает денег" })
+
         old_boost_stats, new_boost_stats = is_levelup
 
         return Response({
