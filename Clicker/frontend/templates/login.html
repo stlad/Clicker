@@ -1,18 +1,21 @@
+{% load static %}
 <html lang="en"> 
 <head> 
-    <title>Авторизация в лучшем кликере</title> 
+    <title>Авторизация в лучшем кликере</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head> 
 <body> 
     <h1>Авторизация</h1>
+    
     <form action="{% url 'login' %}" method='POST'> 
         {% csrf_token %} 
-        {{ form.username }} 
-        {{ form.password }} 
-        {% if invalid %} 
-            <p>Введи нормальные данные</p> 
-        {% endif %} 
+        {{ form.username }}<br>
+        {{ form.password }}<br>
         <input type="submit"> 
+        <a href="{% url 'register' %}">Не зарегистрирован?</a>
+        {% if invalid %} 
+            <p>Введи нормальные данные слыш!</p> 
+        {% endif %} 
     </form>
-    <a href="{% url 'register' %}">Не зарегистрирован?</a>
 </body> 
 </html>

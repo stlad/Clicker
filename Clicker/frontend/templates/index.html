@@ -9,17 +9,16 @@
     <h1>Этот кликер - самый лучший кликер на Земле</h1>
     <div class="nav">
         Чего ждешь, <div class="beauty_text">{{ user.username }}</div>? Гладь кошко-девчонку!
+        
     </div>
     <main class="app">
-        <div class="header">
-            
-        </div>
 
         <div class = "info">
             Сейчас у тебя <div class = "beauty_text info_el"  id='coins'> {{core.coins}} </div> кошко-монеток <br>
             Невероятная мощь клика: <div class="beauty_text info_el" id="click_power">{{ core.click_power }}</div> <br>
             Кошка сама себя жамкает на: <div class="beauty_text info_el" id="auto_click_power">{{ core.auto_click_power }}</div> монеток <br>
             На следующий уровень нужно: <div class="beauty_text info_el" id="next_level_price">{{ core.next_level_price }}</div> кошко-монеток<br>
+            <a href = "{% url 'login' %}" class="login_butt">Выйти</a><br>
         </div>
 
         <div class="cat_container">
@@ -46,6 +45,7 @@
                 {% endfor %}
             </div> 
         </aside>
+        
     </main>
 </body> 
 </html>

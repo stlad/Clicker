@@ -1,0 +1,65 @@
+body{
+    background-image: url(../img/kaneki_room.jpg);
+    color:white;
+    font-size: 17px;
+    font-family: "Tahoma", sans-serif;
+}
+
+h1
+{
+    text-align: center;
+    margin-top: 200px;
+}
+
+form{
+    text-align: center;
+}
+
+input,a {
+    background-color: none;
+    border:solid 2px black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: "Snell Roundhand",cursive;
+    font-size: 15px;
+    
+}
+
+input[type='text'], input[type='password']
+{
+    
+    color: #E84098;
+    width:400px;
+    padding: 20px 10px 20px 10px;
+    
+    color: #E84098;
+    
+}
+
+input[type='text']:hover, input[type='password']:hover
+{
+
+    border-color:#E84098;
+
+}
+input[type='submit'], a
+{
+    padding: 20px 10px 20px 10px;
+}
+input[type='submit']:hover, a:hover
+{
+    border-color: #E84098;
+    color:#E84098;
+}
+input[type='submit']:active, a:active
+{
+    background-color: #E84098;
+    color:white;
+}
+
+a{
+    border-color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+}

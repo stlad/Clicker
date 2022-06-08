@@ -63,13 +63,24 @@ body{
     border-radius: 20px;
     background-color: rgb(80, 72, 72);
 }
-.boost_0:hover{background-color: #E84098;}
+.boost_0:hover
+{
+    background-color: #E84098;
+    border:solid 2px;
+    border-color:white;
+    color:white;
+}
 .boost_1
 {
     border-radius: 20px;
     background-color:rgb(104, 24, 40);
 }
-.boost_1:hover{background-color: #E84098;}
+.boost_1:hover{
+    background-color: #E84098;
+    border:solid 2px;
+    border-color:white;
+    color:white;
+}
 
 
 .cat_text
@@ -87,4 +98,29 @@ body{
     color: rgb(104, 24, 40);
     font-size: large;
     line-height: 30px;
+}
+
+.login_butt
+{
+    text-decoration: none;
+    background-color: none;
+    color:white;
+    border: solid 2px;
+    border-color: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+    margin-top: 60px;
+    display: block;
+    width:100px;
+    text-align: center;
+}
+.login_butt:hover
+{
+    border-color: #E84098;
+    color:#E84098;
+}
+.login_butt:active
+{
+    background-color: #E84098;
+    color:white;
 }

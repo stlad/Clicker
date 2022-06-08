@@ -10,7 +10,7 @@ class UserForm(forms.ModelForm):
     username = forms.CharField(
         max_length = 20,
         label= 'Имя пользователя',
-        widget=forms.TextInput(attrs={'placeholder':'Вводи'}),
+        widget=forms.TextInput(attrs={'placeholder':'Как тебя зовут, семпай?'}),
     )
 
     password = forms.CharField(
